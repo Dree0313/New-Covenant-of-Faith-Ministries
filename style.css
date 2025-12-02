@@ -1,6 +1,6 @@
 #welcome-overlay {
     position: fixed;                /*Stays on top*/
-    top: 50%;
+    top: 15%;
     left: 0;
     width: 100%;
     height: 40vh;                   /*Quarter of the viewport height*/

@@ -23,6 +23,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 10px;
     text-align: center;
 }
 
@@ -33,3 +35,6 @@
     display: block;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+}

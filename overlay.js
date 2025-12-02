@@ -6,8 +6,8 @@ window.addEventListener('load', () => {
         overlay.classList.add('show');
     }, 500);
 
-    //Slide back up after 3.0s
+    //Slide back up after 4.0s
     setTimeout(() => {
         overlay.classList.remove('show');
-    }, 3500);
+    }, 4500);
 })

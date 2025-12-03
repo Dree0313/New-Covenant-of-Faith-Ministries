@@ -1,16 +1,16 @@
 #welcome-overlay {
     position: fixed;                /*Stays on top*/
-    top: 5%;
+    top: -5%;
     left: 0;
     width: 100%;
-    height: 40vh;                   /*Quarter of the viewport height*/
+    height: 50vh;                   /*Quarter of the viewport height*/
     background-color: #693065; 
     display: flex;
     flex-direction: column;
     justify-content: center;        /*Vertically center content*/
     align-items: center;            /*Horizontally center content*/
     z-index: 1000;                  /*Ensure overlay is on top*/
-    transform: translateY(-100%);   /*Start off-screen*/
+    transform: translateY(-80%);    /*Start off-screen*/
     transition: transform 1s ease;  /*Smooth slide animation*/
 }
 
@@ -37,6 +37,9 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    background: linear-gradient(to bottom,#fff4d1 50%,#ffe8a3, #F3B224);
+    margin: 0;
+    padding: 0;
 }
 
 /*Mobile adjustments*/
@@ -54,4 +57,56 @@ body {
         font-size: 1rem;
         line-height: 1.2;
     }
+}
+
+.pastor-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+}
+
+.pastor-card {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Image */
+.pastor-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Name */
+.pastor-name {
+    font-size: 1.5rem;
+    margin: 10px 0 5px;
+    color: #693065; /* matches your overlay theme */
+}
+
+/* Title */
+.pastor-title {
+    font-size: 1rem;
+    margin: 0;
+    color: #444;
+    font-weight: 600;
+}
+
+/* Description */
+.pastor-description {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
 }

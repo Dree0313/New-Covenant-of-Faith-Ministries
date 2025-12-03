@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
     const overlay = document.getElementById('welcome-overlay');
+    const menuButton = document.getElementById('menu-button');
 
     //Slide down after 0.5s
     setTimeout(() => {
@@ -10,4 +11,8 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         overlay.classList.remove('show');
     }, 4500);
+
+    setTimeout(() => {
+        menuButton.classList.remove('menu-hidden');
+    }, 5700);
 })

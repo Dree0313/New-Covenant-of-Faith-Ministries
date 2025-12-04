@@ -2,6 +2,13 @@
 <html>
 
 <head>
+    <!-- React core -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Allows JSX inside script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <title>New Covenant of Faith Ministries</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,13 +62,45 @@
             </div>
         </div>
         <h2>Meet Our First Lady</h2>
-        <p>Caroll Rutledge</p>
+        <p>Carol Rutledge</p>
+        <h2>Upcoming Events</h2>
+        <!-- React Event Listing -->
+        <div id="event-listing"></div>
         <h1>Contact</h1>
         <p>Email: NCFMTrustingGod@gmail.com</p>
         <p>Address:</p>
         <pre>8626 2nd Ave N</pre>
         <pre>Birmingham, AL 35206</pre>
+    </div>
+
+    <!-- React Code -->
+    <script type="text/babel">
+        const events = [
+            { title: "Sunday Worship", date: "2025-12-07", time: "10:00 AM", location: "Main Sanctuary" },
+            { title: "Sunday Worship", date: "2025-12-14", time: "10:00 AM", location: "Main Sanctuary" }
+        ];
+        function EventCard({ event }) {
+            return (
+                <div className="pastor-card">
+                    <h2>{event.title}</h2>
+                    <p>{event.date} at {event.time}</p>
+                    <p>Location: {event.location}</p>
+                </div>
+            );
+        }
+        function EventListing({ events }) {
+            return (
+                <div className="pastor-scroll">
+                    {events.map((event, index) => (
+                        <EventCard key={index} event={event} />
+                    ))}
+                </div>
+            );
+        }
+        const root = ReactDOM.createRoot(document.getElementById('event-listing'));
+        root.render(<EventListing events={events} />);
+    </script>
 </body>
-</div>
+
 
 </html>

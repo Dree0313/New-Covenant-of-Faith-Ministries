@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
     const menuButton = document.getElementById('menu-button');
 
 
-    //Slide down after 0.5s
+    //Welcome overlay slide down after 0.5s
     setTimeout(() => {
         overlay.classList.add('show');
     }, 500);
@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
         overlay.querySelector('.overlay-content').classList.add('hidden-content');
     }, 4000);
 
-    //Slide back up after 4.0s
+    //Welcome overlay slide back up & Logo overlay slide down after 5.0s
     setTimeout(() => {
         overlay.classList.remove('show');
         logoOverlay.classList.add('shrink');

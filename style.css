@@ -1,3 +1,4 @@
+/* --- Welcome Overlay --- */
 #welcome-overlay {
     position: fixed;                /*Stays on top*/
     top: -3%;
@@ -14,7 +15,7 @@
     transition: transform 1s ease;  /*Smooth slide animation*/
 }
 
-
+/* Default overlay content state */
 #welcome-overlay .overlay-content {
     margin-top: 80px;
     opacity: 0;
@@ -22,20 +23,24 @@
     transition: opacity 1s ease;
 }
 
+/* To display the overlay */
+#welcome-overlay.show {
+    transform: translateY(0);       /*Slide down into view*/
+}
+
+/* To reveal content */
 #welcome-overlay.show .overlay-content {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* To hide content */
 #welcome-overlay .overlay-content.hidden-content {
     opacity: 0;
     pointer-events: none;
 }
 
-#welcome-overlay.show {
-    transform: translateY(0);       /*Slide down into view*/
-}
-
+/* --- Logo Overlay --- */
 #logo-overlay {
     position: fixed;
     top: 10%;
@@ -46,19 +51,24 @@
     opacity: 0;
 }
 
+/* To make logo visible */
 #logo-overlay.visible {
     opacity: 1;
 }
 
+/* To shrink logo */
 #logo-overlay.shrink {
     top: 8%;
     left: 50%;
     transform: translate(-50%, -100%);
 }
+
+/* To shrink img in logo overlay */
 #logo-overlay.shrink img{
     max-width: 80px;
 }
 
+/* Image in logo overlay */
 #logo-overlay img {
     max-width: 200px;
     height: auto;
@@ -66,6 +76,7 @@
     transition: all 1s ease;
 }
 
+/* --- Global Content Style --- */
 .overlay-content {
     display: flex;
     flex-direction: column;
@@ -76,6 +87,7 @@
     text-align: center;
 }
 
+/* Keeps logo in bounds */
 .logo {
     max-width: 200px;
     height: auto;
@@ -84,6 +96,7 @@
     transition: all 1s ease;
 }
 
+/* --- Menu Button --- */
 #menu-button {
     position: fixed;
     bottom: -10px;
@@ -97,27 +110,28 @@
     z-index: 9999;
 }
 
-/* Start hidden */
+/* Start menu in hidden state */
 .menu-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
+/* --- Background Overlay --- */
 #background-overlay {
-    position: static;          /* Stays in place */
+    position: static;                               /* Stays in place */
     width: 70%;
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    top: 60px;                /* space from top */
-    left: 20px;               /* space from left */
-    right: 20px;              /* space from right */
-    bottom: 60px;             /* space from bottom */
-    background-color: rgba(255, 255, 255, 0.411); /* mostly white, slight transparency */
-    border-radius: 25px;      /* rounded corners */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* subtle shadow */
-    z-index: 500;             /* behind overlay and menu button but above background */
-    pointer-events: none;     /* so it doesn’t block clicks */
+    top: 60px;                                      /* space from top */
+    left: 20px;                                     /* space from left */
+    right: 20px;                                    /* space from right */
+    bottom: 60px;                                   /* space from bottom */
+    background-color: rgba(255, 255, 255, 0.411);
+    border-radius: 25px;                            /* rounded corners */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);     /* subtle shadow */
+    z-index: 500;                                   /* behind overlay and menu button but above background */
+    pointer-events: auto;                           /* so it doesn’t block clicks */
 }
 
 
@@ -138,6 +152,7 @@
     }
 }
 
+/* --- Pastor scroll view --- */
 .pastor-scroll {
     display: flex;
     gap: 20px;
@@ -147,6 +162,7 @@
     scrollbar-width: thin;
 }
 
+ 
 .pastor-card {
     background: white;
     width: 90%;

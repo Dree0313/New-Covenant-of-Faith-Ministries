@@ -45,8 +45,8 @@
     position: fixed;
     top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 1s ease;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.7s ease;
     z-index: 1001;
     opacity: 0;
 }
@@ -58,9 +58,9 @@
 
 /* To shrink logo */
 #logo-overlay.shrink {
-    top: 8%;
+    top: 5.25%;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -50%) scale (1);
 }
 
 /* To shrink img in logo overlay */
@@ -138,7 +138,7 @@
 /*Mobile adjustments*/
 @media (max-width: 600px) {
     #welcome-overlay {
-        height: 30vh;
+        height: 50vh;
         padding: 10px;
     }
 
@@ -187,7 +187,7 @@
 .pastor-name {
     font-size: 1.5rem;
     margin: 10px 0 5px;
-    color: #693065; /* matches your overlay theme */
+    color: #693065; 
 }
 
 /* Title */

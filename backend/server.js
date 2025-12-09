@@ -9,6 +9,7 @@ app.use(express.json());
 let events = [];
 
 function generateSundays() {
+    events = [];
     const today = new Date();
     const oneMonthLater = new Date();
     oneMonthLater.setMonth(today.getMonth() + 1);

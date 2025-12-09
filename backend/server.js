@@ -16,6 +16,8 @@ function generateSundays() {
     let newEvents = [];
     let current = new Date(today);
 
+    current.setDate(current.getDate() + (7 - current.getDay()) % 7);
+
     while (current <= oneMonthLater) {
         if(current.getDay() === 0) {
             newEvents.push({
@@ -41,6 +43,7 @@ app.post("/generate-sundays", (req, res) => {
 });
 
 app.get("/events", (req, res) => {
+    console.log("Sending events:", events);
     res.json(events);
 });
 

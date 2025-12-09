@@ -14,28 +14,23 @@ function generateSundays() {
     const oneMonthLater = new Date();
     oneMonthLater.setMonth(today.getMonth() + 1);
     
-    let newEvents = [];
     let current = new Date(today);
-
-    current.setDate(current.getDate() + 1);
+    const daysUntilSunday = (7 - current.getDay()) % 7;
+    current.setDate(current.getDate() + daysUntilSunday);
 
     while (current <= oneMonthLater) {
-        if(current.getDay() === 0) {
-            newEvents.push({
-                title: "Sunday Worship",
-                date: current.toISOString().split("T")[0],
-                time: "10:00 AM",
-                location: "Main Sanctuary"
-            });
-        }
-        current.setDate(current.getDate() + 1);
+        events.push({
+            title: "Sunday Worship",
+            date: current.toISOString().split("T")[0],
+            time: "10:00 AM",
+            location: "Main Sanctuary"
+        });
+        current.setDate(current.getDate() + 7);
     }
+    
 
-    newEvents.forEach(e => {
-        if (!events.find(ev => ev.date === e.date)) {
-            events.push(e);
-        }
-    });
+
+
 }
 
 app.post("/generate-sundays", (req, res) => {

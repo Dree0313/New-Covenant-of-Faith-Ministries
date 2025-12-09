@@ -97,7 +97,8 @@
             const [events, setEvents] = useState([]);
 
             useEffect(() => {
-                fetch("https://ncfm-backend.onrender.com/events")
+                fetch("https://ncfm-backend.onrender.com/generate-sundays", {method: "POST"})
+                    .then(() => fetch("https://ncfm-backend.onrender.com/events"))
                     .then(res => res.json())
                     .then(data => setEvents(data))
                     .catch(err => console.error("Error fetching events:", err));

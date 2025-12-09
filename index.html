@@ -3,6 +3,7 @@
 <!-- Starts html docuement -->
 <html>
 <!-- Provides instructions on how the browser and search engine should interpret, display, and interact with content -->
+
 <head>
     <!-- Loads React (main library) from a CDN -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Makes website responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Ends head -->    
+    <!-- Ends head -->
 </head>
 
 <body>
@@ -97,14 +98,9 @@
             const [events, setEvents] = useState([]);
 
             useEffect(() => {
-                fetch("https://ncfm-backend.onrender.com/generate-sundays", {method: "POST"})
-                    .then(() => fetch("https://ncfm-backend.onrender.com/events"))
+                fetch("https://ncfm-backend.onrender.com/generate-sundays", { method: "POST" })
+                    .then(() => fetch(`https://ncfm-backend.onrender.com/events?ts=${Date.now()}`, { cache: "no-store" }))
                     .then(res => res.json())
-                    .then(data => {
-                        console.log("Generating Sundays:", data);
-                        return fetch("https://ncfm-backend.onrender.com/events", {cache: "no-store"});
-                    })
-                    .then(res=> res.json())
                     .then(data => {
                         console.log("Fetched events:", data);
                         setEvents(data);

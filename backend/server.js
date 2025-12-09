@@ -8,6 +8,11 @@ app.use(express.json());
 
 let events = [];
 
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store');
+    next();
+});
+
 function generateSundays() {
     events = [];
     const today = new Date();

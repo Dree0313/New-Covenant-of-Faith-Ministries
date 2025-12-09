@@ -81,10 +81,8 @@
 
     <!-- React Code -->
     <script type="text/babel">
-        const events = [
-            { title: "Sunday Worship", date: "2025-12-07", time: "10:00 AM", location: "Main Sanctuary" },
-            { title: "Sunday Worship", date: "2025-12-14", time: "10:00 AM", location: "Main Sanctuary" }
-        ];
+        const { useState, useEffect } = React;
+
         function EventCard({ event }) {
             return (
                 <div className="pastor-card">
@@ -94,7 +92,18 @@
                 </div>
             );
         }
-        function EventListing({ events }) {
+
+        function EventListing() {
+            const [events, setEvents] = useState([]);
+
+            useEffect(() => {
+                fetch("https://ncfm-backend.onrender.com/generate-sundays", {method: "POST"})
+                    .then(() => fetch("https://ncfm-backend.onrender.com/events"))
+                    .then(res => res.json())
+                    .then(data => setEvents(data))
+                    .catch(err => console.error("Error fetching events:", err));
+            }, []);
+
             return (
                 <div className="pastor-scroll">
                     {events.map((event, index) => (
@@ -103,8 +112,9 @@
                 </div>
             );
         }
+
         const root = ReactDOM.createRoot(document.getElementById('event-listing'));
-        root.render(<EventListing events={events} />);
+        root.render(<EventListing />);
     </script>
 </body>
 

@@ -16,7 +16,7 @@ function generateSundays() {
     let newEvents = [];
     let current = new Date(today);
 
-    current.setDate(current.getDate() + (7 - current.getDay()) % 7);
+    current.setDate(current.getDate() + 1);
 
     while (current <= oneMonthLater) {
         if(current.getDay() === 0) {

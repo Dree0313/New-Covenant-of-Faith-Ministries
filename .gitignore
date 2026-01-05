@@ -1,2 +1,9 @@
 backend/node_modules/
 backend/events.db
+
+# Ignore Vite dev files in backend
+/backend/node_modules/
+/backend/dist/
+/backend/.vite/
+/backend/*.log
+/backend/*.local

@@ -6,19 +6,23 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-let events = [];
-
+// Always prevent caching
 app.use((req, res, next) => {
-    res.setHeader('Cache-Control', 'no-store');
+    res.setHeader("Cache-Control", "no-store");
     next();
 });
 
+/**
+ * PURE function
+ * No global state
+ * Always generates fresh Sundays based on TODAY
+ */
 function generateSundays() {
-    events = [];
+    const events = [];
     const today = new Date();
     const oneMonthLater = new Date();
     oneMonthLater.setMonth(today.getMonth() + 1);
-    
+
     let current = new Date(today);
     const daysUntilSunday = (7 - current.getDay()) % 7;
     current.setDate(current.getDate() + daysUntilSunday);
@@ -32,29 +36,21 @@ function generateSundays() {
         });
         current.setDate(current.getDate() + 7);
     }
-    
 
-
-
+    return events;
 }
 
-app.post("/generate-sundays", (req, res) => {
-    generateSundays();
-    res.json({ message: "Sundays generated for the next month!", events });
-});
-
+/**
+ * EVENTS ENDPOINT
+ * Always fresh
+ * No memory
+ * No stale data
+ */
 app.get("/events", (req, res) => {
-    console.log("Sending events:", events);
+    const events = generateSundays();
     res.json(events);
-});
-
-app.delete("/events/:date", (req, res) => {
-    const { date } = req.params;
-    events = events.filter(ev => ev.date !== date);
-    res.json({ message: "Event deleted", events });
 });
 
 app.listen(PORT, () => {
     console.log(`Backend running on port ${PORT}`);
-    generateSundays();
 });

@@ -46,6 +46,17 @@
         </div>
     </div>
 
+    <!-- Hamburger Menu Button -->
+     <div class="menu-button" onclick="toggleMenu()">
+
+     </div>
+
+     <!-- Hidden Menu -->
+      <div id="menu" class="menu">
+        <a href="about.html">About Us</a>
+        <a href="donate.html">Donations</a>
+      </div>
+
     <!-- Main content of website -->
     <div id="background-overlay">
         <script src="overlay.js"></script>
@@ -128,6 +139,17 @@
 
         const root = ReactDOM.createRoot(document.getElementById('event-listing'));
         root.render(<EventListing />);
+
+
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } 
+            else {
+                menu.style.display = "block";
+            }
+        }
     </script>
 </body>
 

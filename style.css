@@ -6,7 +6,7 @@
     width: 100%;
     height: 50vh;                   /*Quarter of the viewport height*/
     background-color: #693065; 
-    display: none !important;  /*flex
+    display: flex;
     flex-direction: column;
     justify-content: center;        /*Vertically center content*/
     align-items: center;            /*Horizontally center content*/

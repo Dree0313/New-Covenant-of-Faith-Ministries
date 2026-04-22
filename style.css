@@ -113,7 +113,6 @@
 /* Start menu in hidden state */
 .menu-hidden {
     opacity: 0;
-    pointer-events: none;
 }
 
 /* --- Background Overlay --- */

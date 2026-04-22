@@ -99,19 +99,20 @@
 .off-screen-menu {
     position: fixed;
     top: 0;
-    right: -250px;
-    left: auto;
+    right: 0;
+
     width: 200px;
     height: 100vh;
     background: rgb(174, 173, 173);
     padding: 20px;
-    transition: right 0.3s ease;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
     z-index: 20000;
 }
 
 .off-screen-menu.active {
-    right: 0;
-    left: auto;
+    transform: translateX(0);
 }
 
 .off-screen-menu ul {

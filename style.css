@@ -116,8 +116,14 @@
 }
 
 .menu {
-    display: block !important;
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 20px;
     background: red;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 20000;
 }
 
 /* --- Background Overlay --- */

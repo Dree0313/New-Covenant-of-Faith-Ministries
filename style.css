@@ -99,9 +99,9 @@
 .off-screen-menu {
     position: fixed;
     top: 0;
-    right: -450px;
+    right: -100px;
 
-    width: 100%;
+    width: 250px;
     height: 100vh;
     background: rgb(174, 173, 173);
 
@@ -110,10 +110,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
 
-    transition: .3s ease;
-    z-index: 20000;
+    transition: right 0.3s ease;
+    z-index: 15000;
 }
 
 .off-screen-menu.active {
@@ -179,7 +179,7 @@ nav {
 
 .ham-menu.active span:nth-child(1) {
     top: 50%;
-    transform: translate(-50%, -50%) rotate (45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .ham-menu.active span:nth-child(2) {
@@ -188,7 +188,7 @@ nav {
 
 .ham-menu.active span:nth-child(3) {
     top: 50%;
-    transform: translate(-50%, -50%) rotate (-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* --- Background Overlay --- */

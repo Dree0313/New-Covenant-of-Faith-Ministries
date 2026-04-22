@@ -113,7 +113,7 @@
     font-size: 2rem;
 
     transition: right 0.3s ease;
-    z-index: 15000;
+    z-index: 15;
 }
 
 .off-screen-menu.active {

@@ -120,10 +120,14 @@
     position: fixed;
     top: 80px;
     right: 20px;
-    background: red;
+    background: grey;
     padding: 10px;
     border-radius: 10px;
     z-index: 20000;
+}
+
+.menu a {
+    display: block;
 }
 
 /* --- Background Overlay --- */

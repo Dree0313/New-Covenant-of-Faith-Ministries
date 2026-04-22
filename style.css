@@ -99,7 +99,8 @@
 .off-screen-menu {
     position: fixed;
     top: 0;
-    right: -250ps;
+    right: -250px;
+    left: auto;
     width: 200px;
     height: 100vh;
     background: rgb(174, 173, 173);
@@ -110,6 +111,7 @@
 
 .off-screen-menu.active {
     right: 0;
+    left: auto;
 }
 
 .off-screen-menu ul {
@@ -144,31 +146,6 @@
     height: 4px;
     background: white;
     border-radius: 2px;
-}
-
-.menu {
-    display: none;
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    background: rgb(174, 173, 173);
-    padding: 10px;
-    border-radius: 10px;
-    z-index: 20000;
-
-    flex-direction: column;
-    gap: 10px;
-}
-
-.menu.active {
-    display: flex;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #693065;
-    font-weight: bold;
-    padding: 5px 10px;
 }
 
 /* --- Background Overlay --- */

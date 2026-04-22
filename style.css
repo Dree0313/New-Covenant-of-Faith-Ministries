@@ -154,7 +154,7 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 20000;
+    z-index: 30000;
 }
 
 .ham-menu span {

@@ -41,18 +41,21 @@
             <h1>Welcome to New Covenant of Faith Ministries</h1>
             <h2>where we trust God and love people</h2>
         </div>
-        <div id="menu-button" class="menu-hidden" onclick="toggleMenu()">
-            &#9776; <!-- Hamburger icon -->
-        </div>
     </div>
 
 
+    <nav>
+        <div class="ham-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-     <!-- Hidden Menu -->
-      <div id="menu" class="menu">
-        <a href="about.html">About Us</a>
-        <a href="donate.html">Donations</a>
-      </div>
+        <div id="menu" class="menu">
+            <a href="abount.html">About Us</a>
+            <a href="donate.html">Donations</a>
+        </div>
+    </nav>
 
     <!-- Main content of website -->
     <div id="background-overlay">
@@ -137,16 +140,14 @@
         const root = ReactDOM.createRoot(document.getElementById('event-listing'));
         root.render(<EventListing />);
 
-
         window.toggleMenu = function () {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } 
-            else {
-                menu.style.display = "block";
-            }
+            const menu = document.getElementById("menu");
+            const ham = document.querySelector(".ham-menu");
+
+            menu.classList.toggle("active");
+            ham.classList.toggle("active");
         }
+        
     </script>
 </body>
 

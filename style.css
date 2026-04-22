@@ -117,7 +117,7 @@
 }
 
 .off-screen-menu.active {
-    right: 50;
+    right: 0;
 }
 
 .off-screen-menu ul {
@@ -135,12 +135,21 @@
     font-weight: bold;
 }
 
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color:  rgb(34, 37, 49);
+}
+
 .ham-menu {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 30px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -149,9 +158,23 @@
 }
 
 .ham-menu span {
-    height: 4px;
-    background: white;
-    border-radius: 2px;
+    height: 5px;
+    width: 100%;
+    background: #6F86FF;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
 }
 
 /* --- Background Overlay --- */

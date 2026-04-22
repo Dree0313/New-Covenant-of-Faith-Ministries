@@ -144,11 +144,11 @@
         root.render(<EventListing />);
 
         window.toggleMenu = function () {
-            const menu = document.getElementById("menu");
             const ham = document.querySelector(".ham-menu");
+            const offScreenMenu = document.querySelector(".off-screen-menu");
 
-            menu.classList.toggle("active");
             ham.classList.toggle("active");
+            offScreenMenu.classList.toggle("active");
         }
         
     </script>

@@ -115,6 +115,11 @@
     opacity: 0;
 }
 
+.menu {
+    display: block !important;
+    background: red;
+}
+
 /* --- Background Overlay --- */
 #background-overlay {
     position: static;                               /* Stays in place */

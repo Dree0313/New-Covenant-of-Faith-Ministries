@@ -111,13 +111,13 @@
     align-items: center;
     text-align: center;
     font-size: 3rem;
-    transform: translateX(100%);
+
     transition: .3s ease;
     z-index: 20000;
 }
 
 .off-screen-menu.active {
-    transform: translateX(0);
+    right: 0;
 }
 
 .off-screen-menu ul {

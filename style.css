@@ -163,10 +163,8 @@ nav {
     background: white;
     border-radius: 25px;
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-100%, -50%);
-    transition: .3s ease;
+    left: 0;
+    transition: none;
 }
 
 .ham-menu span:nth-child(1) {

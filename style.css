@@ -117,7 +117,7 @@
 }
 
 .off-screen-menu.active {
-    right: 0;
+    right: 50;
 }
 
 .off-screen-menu ul {

@@ -138,7 +138,7 @@
         root.render(<EventListing />);
 
 
-        function toggleMenu() {
+        window.toggleMenu = function () {
             var menu = document.getElementById("menu");
             if (menu.style.display === "block") {
                 menu.style.display = "none";
